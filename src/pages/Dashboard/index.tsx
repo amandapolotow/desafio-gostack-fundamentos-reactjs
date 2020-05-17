@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Loader from 'react-loader-spinner';
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
@@ -59,8 +59,17 @@ const Dashboard: React.FC = () => {
               <img src={income} alt="Income" />
             </header>
             <h1 data-testid="balance-income">
-              R$
-              {balance && formatValue(parseFloat(balance.income))}
+              {balance.income ? (
+                formatValue(parseFloat(balance.income))
+              ) : (
+                <Loader
+                  type="ThreeDots"
+                  color="#FF872C"
+                  height={50}
+                  width={50}
+                  timeout={8000}
+                />
+              )}
             </h1>
           </Card>
           <Card>
@@ -69,8 +78,17 @@ const Dashboard: React.FC = () => {
               <img src={outcome} alt="Outcome" />
             </header>
             <h1 data-testid="balance-outcome">
-              R$
-              {balance && formatValue(parseFloat(balance.outcome))}
+              {balance.outcome ? (
+                formatValue(parseFloat(balance.outcome))
+              ) : (
+                <Loader
+                  type="ThreeDots"
+                  color="#FF872C"
+                  height={50}
+                  width={50}
+                  timeout={8000}
+                />
+              )}
             </h1>
           </Card>
           <Card total>
@@ -79,8 +97,17 @@ const Dashboard: React.FC = () => {
               <img src={total} alt="Total" />
             </header>
             <h1 data-testid="balance-total">
-              R$
-              {balance && formatValue(parseFloat(balance.total))}
+              {balance.total ? (
+                formatValue(parseFloat(balance.total))
+              ) : (
+                <Loader
+                  type="ThreeDots"
+                  color="#fff"
+                  height={50}
+                  width={50}
+                  timeout={8000}
+                />
+              )}
             </h1>
           </Card>
         </CardContainer>
