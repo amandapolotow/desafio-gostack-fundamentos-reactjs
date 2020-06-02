@@ -23,6 +23,23 @@ export const ImportFileContainer = styled.section`
   padding: 64px;
 `;
 
+export const UploadMessageContainer = styled.div`
+  padding-top: 12px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+
+  > svg {
+    margin-top: 4px;
+  }
+
+  > p {
+    font-size: 20px;
+    color: #363f5f;
+    padding-left: 4px;
+  }
+`;
+
 export const Footer = styled.section`
   margin-top: 36px;
   display: flex;
